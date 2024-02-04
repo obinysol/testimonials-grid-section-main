@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+    background-color: hsl(210, 46%, 95%);
+    overflow: scroll;
+    position: relative;
+}
+
+.txt-white{color: hsl(210, 46%, 95%);}
+.txt-light{color: hsl(0, 0%, 81%);}
+.txt-dark{color: hsl(219, 29%, 14%);}
+
+.container{
+    min-height: 95vh;
+    display: grid;
+    grid-template-columns: repeat(4, fr);
+    gap: 1rem;
+    grid-template-areas: 
+        'daniel daniel jonathan kira'
+        'daniel daniel jonathan kira'
+        'jeanette patrick patrick kira'
+        'jeanette patrick patrick kira';
+    justify-content: center;
+    align-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+section{
+    padding: 1.5rem;
+    border-radius: 1rem;
+}
+
+p{
+    line-height: 1.5;
+}
+
+#daniel {
+   position: relative;
+   z-index: 1;
+}
+
+#daniel .bg-quote{
+    position: absolute;
+    top: 0;
+    right: 10%;
+    z-index: 2;
+}
+
+#daniel .info h2{
+    position: absolute;
+    z-index: 3;
+}
+
+.container .meta{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.container .meta .pic{
+    width: 2.5rem;
+    border: .2rem solid hsl(0, 0%, 81%);
+    margin-right: .8rem;
+    border-radius: 50%;
+}
+
+.container .meta .name-title .name{
+    font-weight: 500;
+}
+
+.container .meta .name-title .title{
+    font-size: .8rem;
+}
+
+
+.container .info h1{
+    margin-bottom: 1rem;
+}
+
+#daniel{
+    background-color: hsl(263, 55%, 52%);
+    grid-area: daniel;
+}
+#kira{
+    background-color: hsl(0, 0%, 100%);
+    grid-area: kira;
+}
+#jeanette{
+    background-color: hsl(0, 0%, 100%);
+    grid-area: jeanette;
+}
+#jonathan{
+    background-color: hsl(217, 19%, 35%);
+    grid-area: jonathan;
+}
+#patrick{
+    background-color: hsl(219, 29%, 14%);
+    grid-area: patrick;
+}
+
+@media (max-width: 1200px) {
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'daniel'
+        'jonathan'
+        'jeanette'
+        'patrick'
+        'kira';
+        margin: 2rem auto;
+    }
+}
